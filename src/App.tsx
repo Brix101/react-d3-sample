@@ -4,7 +4,7 @@ import React from "react";
 function App() {
   const ref = React.useRef();
 
-  const canvasWidht = 1080;
+  const canvasWidht = 1900;
   const canasHeight = 800;
 
   React.useEffect(() => {
@@ -24,10 +24,10 @@ function App() {
 
     //Read the data
     d3.csv(
-      "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
-
+      "https://raw.githubusercontent.com/Brix101/pulse-data/master/data.csv",
       // When reading the csv, I must format variables:
       (d) => {
+        console.log(d);
         return {
           date: d3.timeParse("%Y-%m-%d")(d.date),
           value: d.value,
